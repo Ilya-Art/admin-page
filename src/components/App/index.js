@@ -1,21 +1,41 @@
-import React, { Component } from 'react';
-import logo from '../../logo.svg';
-import './index.css';
+import React, { PureComponent } from 'react';
+import styled from 'styled-components';
+import Header from '../Header';
+import Content from '../Content';
+import Footer from '../Footer';
 
-class App extends Component {
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+        flex: 1 0 auto;
+    width: 100%;
+`;
+
+const AppInnerContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 1280px;
+    width: 100%;
+    height: 100vh;
+`;
+
+export default class App extends PureComponent {
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+        <Container>
+            <AppInnerContainer>
+                <Container>
+                    <Header/>
+                    <Content/>
+                </Container>
+                <Footer/>
+            </AppInnerContainer>
+        </Container>
     );
   }
 }
-
-export default App;
