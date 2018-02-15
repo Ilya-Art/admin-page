@@ -1,16 +1,19 @@
-import React from 'react';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
+import React, { PureComponent } from "react";
+import Dialog from "material-ui/Dialog";
+import FlatButton from "material-ui/FlatButton";
+import RaisedButton from "material-ui/RaisedButton";
+import TextField from "material-ui/TextField";
 
-export default class LoginComponent extends React.Component {
-    state = {
-        open: false,
-        loginValue: '',
-        passwordValue: ''
+export default class LoginComponent extends PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            open: false,
+            loginValue: "",
+            passwordValue: ""
+        };
     };
-
+    
     handleOpen = () => {
         this.setState({open: true});
     };
@@ -20,7 +23,7 @@ export default class LoginComponent extends React.Component {
     };
 
     handleSubmit = () => {
-        console.log(this.state.loginValue+'  '+this.state.passwordValue);
+        console.log(this.state.loginValue+"  "+this.state.passwordValue);
         this.handleClose();
     };
 

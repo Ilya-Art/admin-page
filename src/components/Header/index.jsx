@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React, { PureComponent } from "react";
+import styled from "styled-components";
 
 const HeaderContainer = styled.div`
     // position: fixed;
@@ -12,7 +12,7 @@ const HeaderContainer = styled.div`
     border-bottom: 1px solid gray;
 `;
 
-export default class Header extends Component {
+export default class Header extends PureComponent {
     render() {
         return (
             <HeaderContainer>
