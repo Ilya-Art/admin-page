@@ -1,8 +1,9 @@
-import React, { PureComponent } from "react";
-import styled from "styled-components";
-import Header from "../Header";
-import Content from "../Content";
-import Footer from "../Footer";
+import React, { PureComponent } from 'react';
+import styled from 'styled-components';
+import Header from '../Header';
+import Content from '../Content';
+import Footer from '../Footer';
+
 
 const Container = styled.div`
     display: flex;

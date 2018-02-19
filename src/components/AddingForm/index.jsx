@@ -1,13 +1,15 @@
 import React, { PureComponent } from "react";
 import styled from "styled-components";
 import TextField from "material-ui/TextField";
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import DatePicker from 'material-ui/DatePicker';
+import TimePicker from 'material-ui/TimePicker';
+import { Route } from "react-router-dom";
 
 const FormContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align_items: center;
+    align-items: center;
     width: 100%;
 `;
 
@@ -16,45 +18,78 @@ const Empty = styled.div`
 `;
 
 export default class AddingForm extends PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-            actionChosen: false
-        };
-    }
-
     render() {
-        console.log('Waiting');
         return (
-            <Router>
-                <div>
-                    <Route
-                        exact
-                        path="/"
-                        component={Empty} />
-                    <Route
-                        exact
-                        path="/addCinema"
-                        render={() => {
-                           return (
-                                <FormContainer>
-                                    <TextField floatingLabelText="Cinema Name" />
-                                    <TextField floatingLabelText="Town" />
-                                    <TextField floatingLabelText="Holes capacity" />
-                                </FormContainer>
-                           )
-                        }
-                        }
-                    />
-                </div>
-            </Router>
+            <div>
+                <Route
+                    exact
+                    path="/"
+                    component={Empty} />
+                <Route
+                    exact
+                    path="/addCinema"
+                    render={() => {
+                       return (
+                            <FormContainer>
+                                <TextField floatingLabelText="Cinema Name" />
+                                <TextField floatingLabelText="Town" />
+                                <TextField floatingLabelText="Holes capacity" />
+                            </FormContainer>
+                       )
+                    }
+                    }
+                />
+                <Route
+                  exact
+                  path="/addMovie"
+                  render={() => {
+                       return (
+                            <FormContainer>
+                                <TextField floatingLabelText="Movie Title" />
+                                <DatePicker hintText="Start sessions date" />
+                                <DatePicker hintText="End sessions date" />
+                                <TextField multiLine="true" rowsMax="5" floatingLabelText="Description" />
+                            </FormContainer>
+                       )
+                    }
+                    }
+                />
+                <Route
+                  exact
+                  path="/addServices"
+                  render={() => {
+                       return (
+                            <FormContainer>
+                                <TextField floatingLabelText="Service Name" />
+                                <TextField multiLine="true" rowsMax="5" floatingLabelText="Description" />
+                            </FormContainer>
+                       )
+                    }
+                    }
+                />
+                <Route
+                  exact
+                  path="/addSession"
+                  render={() => {
+                       return (
+                            <FormContainer>
+                                <TextField floatingLabelText="Movie Title" />
+                                <TextField floatingLabelText="Cinema Name" />
+                                <TextField floatingLabelText="Hole" />
+                                <TextField floatingLabelText="Price" />
+                                <DatePicker hintText="Date" />
+                                <TimePicker
+                                  format="24hr"
+                                  hintText="Time"
+                                  value={null}
+                                  minutesStep={5}
+                                />
+                            </FormContainer>
+                       )
+                    }
+                    }
+                />
+            </div>
         );
-    }
-
-    componentWillReceiveProps(nextProps) {
-        // this.render();
-        this.setState({
-            actionChosen: nextProps.actionChosen
-        });
     }
 }
