@@ -3,6 +3,7 @@ import styled from "styled-components";
 import TextField from "material-ui/TextField";
 import DatePicker from 'material-ui/DatePicker';
 import TimePicker from 'material-ui/TimePicker';
+import RaisedButton from 'material-ui/RaisedButton';
 import { Route } from "react-router-dom";
 
 const FormContainer = styled.div`
@@ -17,6 +18,10 @@ const Empty = styled.div`
     display: none;
 `;
 
+const submitStyles = {
+  margin: 15,
+};
+
 export default class AddingForm extends PureComponent {
     render() {
         return (
@@ -28,65 +33,57 @@ export default class AddingForm extends PureComponent {
                 <Route
                     exact
                     path="/addCinema"
-                    render={() => {
-                       return (
-                            <FormContainer>
-                                <TextField floatingLabelText="Cinema Name" />
-                                <TextField floatingLabelText="Town" />
-                                <TextField floatingLabelText="Holes capacity" />
-                            </FormContainer>
-                       )
-                    }
+                    render={() =>
+                        <FormContainer>
+                            <TextField floatingLabelText="Cinema Name" />
+                            <TextField floatingLabelText="Town" />
+                            <TextField floatingLabelText="Holes capacity" />
+                            <RaisedButton label="Submit" primary={true} style={submitStyles} type="Submit"/>
+                        </FormContainer>
                     }
                 />
                 <Route
                   exact
                   path="/addMovie"
-                  render={() => {
-                       return (
-                            <FormContainer>
-                                <TextField floatingLabelText="Movie Title" />
-                                <DatePicker hintText="Start sessions date" />
-                                <DatePicker hintText="End sessions date" />
-                                <TextField multiLine="true" rowsMax="5" floatingLabelText="Description" />
-                            </FormContainer>
-                       )
-                    }
+                  render={() =>
+                      <FormContainer>
+                          <TextField floatingLabelText="Movie Title" />
+                          <DatePicker hintText="Start sessions date" />
+                          <DatePicker hintText="End sessions date" />
+                          <TextField multiLine="true" rowsMax="5" floatingLabelText="Description" />
+                          <RaisedButton label="Submit" primary={true} style={submitStyles} />
+                      </FormContainer>
                     }
                 />
                 <Route
                   exact
                   path="/addServices"
-                  render={() => {
-                       return (
-                            <FormContainer>
-                                <TextField floatingLabelText="Service Name" />
-                                <TextField multiLine="true" rowsMax="5" floatingLabelText="Description" />
-                            </FormContainer>
-                       )
-                    }
+                  render={() =>
+                      <FormContainer>
+                          <TextField floatingLabelText="Service Name" />
+                          <TextField multiLine="true" rowsMax="5" floatingLabelText="Description" />
+                          <RaisedButton label="Submit" primary={true} style={submitStyles} />
+                      </FormContainer>
                     }
                 />
                 <Route
                   exact
                   path="/addSession"
-                  render={() => {
-                       return (
-                            <FormContainer>
-                                <TextField floatingLabelText="Movie Title" />
-                                <TextField floatingLabelText="Cinema Name" />
-                                <TextField floatingLabelText="Hole" />
-                                <TextField floatingLabelText="Price" />
-                                <DatePicker hintText="Date" />
-                                <TimePicker
-                                  format="24hr"
-                                  hintText="Time"
-                                  value={null}
-                                  minutesStep={5}
-                                />
-                            </FormContainer>
-                       )
-                    }
+                  render={() =>
+                      <FormContainer>
+                          <TextField floatingLabelText="Movie Title" />
+                          <TextField floatingLabelText="Cinema Name" />
+                          <TextField floatingLabelText="Hole" />
+                          <TextField floatingLabelText="Price" />
+                          <DatePicker hintText="Date" />
+                          <TimePicker
+                            format="24hr"
+                            hintText="Time"
+                            value={null}
+                            minutesStep={5}
+                          />
+                          <RaisedButton label="Submit" primary={true} style={submitStyles} />
+                      </FormContainer>
                     }
                 />
             </div>

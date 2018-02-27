@@ -6,8 +6,8 @@ import AddingForm from '../../components/AddingForm';
 //
 // }
 
-const mapStateToProps = state => {
-  return {
-    actionChosen: state.
-  }
-};
+// const mapStateToProps = state => {
+//   return {
+//     actionChosen: state.
+//   }
+// };
