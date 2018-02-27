@@ -38,7 +38,7 @@ export default class AddingForm extends PureComponent {
                             <TextField floatingLabelText="Cinema Name" />
                             <TextField floatingLabelText="Town" />
                             <TextField floatingLabelText="Holes capacity" />
-                            <RaisedButton label="Submit" primary={true} style={submitStyles} type="Submit"/>
+                            <RaisedButton label="Submit" primary={true} style={submitStyles} />
                         </FormContainer>
                     }
                 />

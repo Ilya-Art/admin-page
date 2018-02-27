@@ -1,20 +1,5 @@
 import { addingActions } from '../actions/actionTypes';
 
-// export default function addingAction(state = [], action) {
-//   switch (action.type) {
-//   case addingActions.ADD_NEW_CINEMA:
-//     return Object.assign({}, state, { cinemasArray: state.cinemasArray.push(action.payload) });
-//   case addingActions.ADD_NEW_MOVIE:
-//     return Object.assign({}, state, { moviesArray: state.moviesArray.push(action.payload) });
-//   case addingActions.ADD_NEW_SERVICES:
-//     return Object.assign({}, state, { cinemasArray: state.cinemasArray.push(action.payload) });
-//   case addingActions.ADD_NEW_SESSION:
-//     return Object.assign({}, state, { cinemasArray: state.cinemasArray.push(action.payload) });
-//   default:
-//     return state;
-//   }
-// }
-
 export function cinemas(state = [], action) {
   switch (action.type) {
   case addingActions.ADD_NEW_CINEMA:

@@ -1,6 +1,6 @@
 import { addingActions } from './actionTypes';
 
-export function addNewCinema(name, town, holesCapacity) {
+export function addNewCinema({ name }, { town }, { holesCapacity }) {
   return {
     type: addingActions.ADD_NEW_CINEMA,
     payload: {
@@ -11,7 +11,7 @@ export function addNewCinema(name, town, holesCapacity) {
   };
 }
 
-export function addNewMovie(movieTitle, startSessionDate, endSessionDate, description) {
+export function addNewMovie({ movieTitle }, { startSessionDate }, { endSessionDate }, { description } ) {
   return {
     type: addingActions.ADD_NEW_MOVIE,
     payload: {
@@ -23,7 +23,7 @@ export function addNewMovie(movieTitle, startSessionDate, endSessionDate, descri
   };
 }
 
-export function addNewServices(serviceName, description) {
+export function addNewServices({ serviceName }, { description }) {
   return {
     type: addingActions.ADD_NEW_SERVICE,
     payload: {
@@ -33,7 +33,7 @@ export function addNewServices(serviceName, description) {
   };
 }
 
-export function addNewSession(movieTitle, cinemaName, hole, price, date, time) {
+export function addNewSession({ movieTitle }, { cinemaName }, { hole }, { price }, { date }, { time }) {
   return {
     type: addingActions.ADD_NEW_SESSION,
     payload: {
